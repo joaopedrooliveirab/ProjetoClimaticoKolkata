@@ -53,7 +53,6 @@ Os dados foram utilizados como fonte para o pipeline de Engenharia de Dados dese
 
 ##  Pipeline
 
-```text
 Dataset CSV
     ↓
 Ingestão
