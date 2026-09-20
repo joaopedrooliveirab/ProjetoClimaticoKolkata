@@ -8,19 +8,19 @@ O projeto tem como objetivo construir um pipeline de dados capaz de:
 
 - realizar a ingestão de dados meteorológicos;
 - armazenar os dados na camada Bronze;
-- realizar limpeza, padronização e validação na camada Silver;
+- realizar padronização e validação na camada Silver;
 - gerar métricas e agregações na camada Gold;
 - disponibilizar os resultados por meio de um dashboard interativo em Streamlit.
 
 ##  Arquitetura
 
-O projeto utiliza uma arquitetura Medalhão composta por três camadas:
+O projeto irá utilizar uma arquitetura Medalhão composta por três camadas:
 
 ###  Bronze
 Armazena os dados brutos, preservando as informações conforme foram recebidas da fonte.
 
 ###  Silver
-Realiza o tratamento e a padronização dos dados, incluindo limpeza, conversão de tipos, validações e demais transformações necessárias.
+Realiza o tratamento e a padronização dos dados, incluindo limpeza, conversão de tipos, validações e demais transformações necessárias. 
 
 ###  Gold
 Armazena os dados preparados para análise, incluindo métricas, agregações e informações utilizadas pelo dashboard.
@@ -49,25 +49,46 @@ Os dados utilizados neste projeto foram obtidos a partir do Kaggle.
 
 **Licença do dataset:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Os dados foram utilizados como fonte para o pipeline de Engenharia de Dados desenvolvido neste projeto.
+Os dados foram utilizados como fonte para o pipeline de Engenharia de Dados que será desenvolvido neste projeto.
 
 ##  Pipeline
 
-Dataset CSV
-    ↓
-Ingestão
-    ↓
- Bronze
-Dados brutos
-    ↓
- Silver
-Limpeza + Padronização + Validação
-    ↓
- Gold
-Métricas + Agregações
-    ↓
-Streamlit
-Dashboard e visualização
+```mermaid
+graph TD
+    A[Dataset CSV]  --> B[Ingestão]
+    B --> C[Bronze<br><i>Dados brutos</i>]
+    C --> D[Silver<br><i>Padronização e validação de valores</i>]
+    D --> E[Gold<br><i>Métricas e agregações</i>]
+    E --> F[Streamlit<br><i>Dashboard</i>]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## O projeto pretende investigar questões como:
 Qual mês apresentou maior precipitação?
